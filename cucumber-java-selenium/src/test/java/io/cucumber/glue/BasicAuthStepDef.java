@@ -32,6 +32,6 @@ public class BasicAuthStepDef extends Context {
     @Then("Congratulations should be displayed")
     public void congratulationsShouldBeDisplayed() {
 
-        Assert.assertTrue(ba.getMessage().contains("Congratulations"),"Not Authorized");
+        Assert.assertTrue(ba.getMessage().getText().contains("Congratulations"),"Not Authorized");
     }
 }

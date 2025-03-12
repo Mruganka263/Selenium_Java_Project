@@ -13,8 +13,8 @@ public class BasicAuth extends Page{
     @FindBy(css=".example p")
     private WebElement message;
 
-    public String getMessage() {
-        return message.getText();
-    }
 
+    public WebElement getMessage(){
+        return message;
+    }
 }
