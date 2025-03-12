@@ -38,7 +38,7 @@ public class Home extends Page {
   private WebElement contextMenu;
 
   @FindBy(css="[href='/disappearing_elements']")
-  private WebElement disapperingElement;
+  private WebElement disappearingElement;
 
   @FindBy(css="[href='/drag_and_drop']")
   private WebElement dragAndDrop;
@@ -88,7 +88,7 @@ public class Home extends Page {
         contextMenu.click();
         break;
       case "Disappearing Elements":
-        disapperingElement.click();
+        disappearingElement.click();
         break;
       case "Drag and Drop":
         dragAndDrop.click();

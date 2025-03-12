@@ -19,14 +19,13 @@ public class BasicAuthStepDef extends Context {
 
     @And("valid credentials are supplied")
     public void validCredentialsAreSupplied() throws IOException {
-        String currentURL= manager.getDriver().getCurrentUrl();
-        String sb = currentURL;
-        sb= sb.substring(0,8)+
+        String currentURL= CommonUtil.getConfigProperty("baseurl");
+        currentURL= currentURL.substring(0,8)+
                 CommonUtil.getConfigProperty("user")+
                 ":"+CommonUtil.getConfigProperty("password")+"@"
-                +sb.substring(8);
-        System.out.println(sb);
-        manager.getDriver().get(sb);
+                +currentURL.substring(8);
+        System.out.println(currentURL);
+        manager.getDriver().get(currentURL);
     }
 
     @Then("Congratulations should be displayed")
