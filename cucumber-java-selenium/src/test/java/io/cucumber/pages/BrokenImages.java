@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrokenImages extends Page{
+public class BrokenImages extends Page {
     public BrokenImages(ChromeDriver driver) {
         super(driver);
     }
@@ -17,14 +17,14 @@ public class BrokenImages extends Page{
     List<WebElement> listOfImages;
 
 
-    public int noOfImagesPresent(){
+    public int noOfImagesPresent() {
         return listOfImages.size();
     }
 
     public List<String> getImageSourceUrl() {
-        List<String> listOfImageSrc= new ArrayList<>();
-        for(WebElement e:listOfImages)
-        listOfImageSrc.add(e.getDomAttribute("src"));
+        List<String> listOfImageSrc = new ArrayList<>();
+        for (WebElement e : listOfImages)
+            listOfImageSrc.add(e.getDomAttribute("src"));
         return listOfImageSrc;
     }
 }
