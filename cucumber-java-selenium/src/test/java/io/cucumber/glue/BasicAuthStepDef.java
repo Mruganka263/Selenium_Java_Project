@@ -15,15 +15,16 @@ public class BasicAuthStepDef extends Context {
     public BasicAuthStepDef(Manager manager) {
         super(manager);
     }
+
     BasicAuth ba = new BasicAuth(manager.getDriver());
 
     @And("valid credentials are supplied")
     public void validCredentialsAreSupplied() throws IOException {
-        String currentURL= CommonUtil.getConfigProperty("baseurl");
-        currentURL= currentURL.substring(0,8)+
-                CommonUtil.getConfigProperty("user")+
-                ":"+CommonUtil.getConfigProperty("password")+"@"
-                +currentURL.substring(8);
+        String currentURL = CommonUtil.getConfigProperty("baseurl") + "/basic_auth";
+        currentURL = currentURL.substring(0, 8) +
+                CommonUtil.getConfigProperty("user") +
+                ":" + CommonUtil.getConfigProperty("password") + "@"
+                + currentURL.substring(8);
         System.out.println(currentURL);
         manager.getDriver().get(currentURL);
     }
@@ -31,6 +32,6 @@ public class BasicAuthStepDef extends Context {
     @Then("Congratulations should be displayed")
     public void congratulationsShouldBeDisplayed() {
 
-        Assert.assertTrue(ba.getMessage().getText().contains("Congratulations"),"Not Authorized");
+        Assert.assertTrue(ba.getMessage().getText().contains("Congratulations"), "Not Authorized");
     }
 }
